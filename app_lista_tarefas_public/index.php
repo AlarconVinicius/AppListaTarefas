@@ -1,3 +1,13 @@
+<?php
+
+	$acao = 'pendente';
+	require 'tarefa_controller.php';
+
+	/* echo '<pre>';
+	print_r($tarefas);
+	echo '</pre>'; */
+
+?>
 <html>
 	<head>
 		<meta charset="utf-8" />
