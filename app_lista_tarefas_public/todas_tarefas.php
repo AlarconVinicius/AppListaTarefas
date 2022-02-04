@@ -21,7 +21,8 @@
 
 		<script>
 			function editar(id, txt_tarefa) {
-				// criar um form de edição
+
+				//criar um form de edição
 				let form = document.createElement('form')
 				form.action = 'tarefa_controller.php?acao=atualizar'
 				form.method = 'post'
@@ -68,9 +69,14 @@
 				tarefa.insertBefore(form, tarefa[0])
 
 			}
-		function remover(id) {
-			location.href = 'todas_tarefas.php?acao=remover&id='+id;
-		}
+
+			function remover(id) {
+				location.href = 'todas_tarefas.php?acao=remover&id='+id;
+			}
+
+			function realizada(id) {
+				location.href = 'todas_tarefas.php?acao=realizada&id='+id;
+			}
 		</script>
 	</head>
 
@@ -112,8 +118,7 @@
 
 											<?php if($tarefa->status == 'pendente') { ?>
 												<i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $tarefa->id ?>, '<?= $tarefa->tarefa ?>')"></i>
-												
-												<a href="todas_tarefas.php?acao=realizada&id=<?= $tarefa->id ?>"><i class="fas fa-check-square fa-lg text-success"></i></a>
+												<i class="fas fa-check-square fa-lg text-success" onclick="realizada(<?= $tarefa->id ?>)"></i>
 											<?php } ?>
 
 										</div>
